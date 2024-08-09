@@ -33,9 +33,13 @@ logger = logging.getLogger('ticketmaster_availability')
 
 EVENTS = [
     (
-        'TOP Milan 28.05.2025',
+        'TOP Milan 28.04.2025',
         'https://shop.ticketmaster.it/tickets/buy-tickets-twenty-one-pilots-the-clancy-world-tour-28-april-2025-forum-assago-8877.html'
     ),
+    (
+        'TOP Bologna 17.04.2025',
+        'https://shop.ticketmaster.it/tickets/buy-tickets-twenty-one-pilots-the-clancy-world-tour-17-april-2025-unipol-arena-casalecchio-di-reno-8880.html'
+    )
 ]
 
 
