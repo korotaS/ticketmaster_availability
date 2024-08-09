@@ -13,6 +13,8 @@ from config import chrome_options, tg_bot, sleep_times, my_id, reader, Status, n
 captcha_tracker = []
 statuses = defaultdict(dict)
 
+tg_bot.send_message(my_id, f'Starting search!')
+
 for i in range(n_iterations):
     for event_name, url in EVENTS:
         driver = webdriver.Chrome(options=chrome_options)
