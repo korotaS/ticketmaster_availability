@@ -1,5 +1,8 @@
+import logging
 import os
 import ssl
+import sys
+from enum import Enum
 
 import easyocr
 import telebot
@@ -21,3 +24,21 @@ sleep_times = {
 }
 
 reader = easyocr.Reader(['en'], gpu=False, recog_network='english_g2')
+
+n_iterations = 10_000
+
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+logger = logging.getLogger('ticketmaster_availability')
+
+
+EVENTS = [
+    (
+        'TOP Milan 28.05.2025',
+        'https://shop.ticketmaster.it/tickets/buy-tickets-twenty-one-pilots-the-clancy-world-tour-28-april-2025-forum-assago-8877.html'
+    ),
+]
+
+
+class Status(Enum):
+    NOT_AVAILABLE = 0
+    AVAILABLE = 1
