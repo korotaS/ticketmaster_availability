@@ -68,8 +68,11 @@ for i in range(n_iterations):
                 status = Status.AVAILABLE if 'CURRENTLY NOT AVAILABLE' not in elem.text else Status.NOT_AVAILABLE
 
                 if status == Status.AVAILABLE and statuses[url].get(cat, Status.NOT_AVAILABLE) == Status.NOT_AVAILABLE:
+                    _, *num_tickets, price, _ = elem.text.split('\n')
+                    num = num_tickets[-1]
+                    msg = f'TICKETS AVAILABLE\nEVENT: {event_name}\nCATEGORY: {cat}\nNUM: {num}\nPRICE: {price}'
                     logger.info(f'Event: {event_name}, iteration: {i}, cat: {cat}, became available')
-                    tg_bot.send_message(my_id, f'TICKETS AVAILABLE\nEVENT {event_name}\nCATEGORY {cat}')
+                    tg_bot.send_message(my_id, msg)
                 elif status == Status.NOT_AVAILABLE and statuses[url].get(cat,
                                                                           Status.NOT_AVAILABLE) == Status.AVAILABLE:
                     logger.info(f'Event: {event_name}, iteration: {i}, cat: {cat}, no longer available')

@@ -38,4 +38,4 @@ on your machine.
 - [ ] Docker version?
 - [ ] Better OCR? Currently the OCR captcha accuracy is about 30%, which is OK 
 by me but definitely could be better
-- [ ] Add prices into the notifications
+- [x] Add prices into the notifications
