@@ -12,6 +12,8 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--disable-dev-shm-usage")
 
 my_id = os.environ['TG_MY_ID']
 api_token = os.environ['TG_BOT_API_TOKEN']
